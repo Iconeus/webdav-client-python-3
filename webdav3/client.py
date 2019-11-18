@@ -8,7 +8,15 @@ import threading
 from io import BytesIO
 from re import sub
 
-import lxml.etree as etree
+import sys
+
+try :
+    import lxml.etree as etree
+except :
+    print("Installing lxml...")
+    from PackageInstaller import install
+    install("lxml")
+
 import requests
 
 from webdav3.connection import *
