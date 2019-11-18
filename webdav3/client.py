@@ -13,15 +13,19 @@ import sys
 try :
     import lxml.etree as etree
 except :
-    print("Installing lxml...")
     from PackageInstaller import install
     install("lxml")
 
-import requests
+try :
+    import requests
+except:
+    from PackageInstaller import install
+    install("requests")
 
-from webdav3.connection import *
-from webdav3.exceptions import *
-from webdav3.urn import Urn
+from WebDAV.webdav3.connection import *
+from WebDAV.webdav3.exceptions import *
+
+from WebDAV.webdav3.urn import Urn
 
 try:
     from urllib.parse import unquote, urlsplit
