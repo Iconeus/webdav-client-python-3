@@ -1,5 +1,5 @@
 # -*- coding: utf-8
-
+import sys
 import functools
 import logging
 import os
@@ -8,12 +8,22 @@ import threading
 from io import BytesIO
 from re import sub
 
-import lxml.etree as etree
-import requests
-
-from webdav3.connection import *
-from webdav3.exceptions import *
-from webdav3.urn import Urn
+try: 
+    import lxml.etree as etree
+except:
+    print("Installing lxml...")
+    from PackageInstaller import install
+    install("lxml")
+    
+try: 
+    import requests
+except:
+    from PackageInstaller import install
+    install("requests")
+    
+from WebDAV.webdav3.connection import *
+from WebDAV.webdav3.exceptions import *
+from WebDAV.webdav3.urn import Urn
 
 try:
     from urllib.parse import unquote, urlsplit, urlparse
