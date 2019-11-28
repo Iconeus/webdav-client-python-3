@@ -21,9 +21,9 @@ except:
     from PackageInstaller import install
     install("requests")
     
-from WebDAV.webdav3.connection import *
-from WebDAV.webdav3.exceptions import *
-from WebDAV.webdav3.urn import Urn
+from webDAV.webdav3.connection import *
+from webDAV.webdav3.exceptions import *
+from webDAV.webdav3.urn import Urn
 
 try:
     from urllib.parse import unquote, urlsplit, urlparse
