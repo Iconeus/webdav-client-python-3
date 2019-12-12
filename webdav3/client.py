@@ -12,13 +12,13 @@ try:
     import lxml.etree as etree
 except:
     print("Installing lxml...")
-    from PackageInstaller import install
+    from PipPackageInstaller import install
     install("lxml")
     
 try: 
     import requests
 except:
-    from PackageInstaller import install
+    from PipPackageInstaller import install
     install("requests")
     
 from webDAV.webdav3.connection import *
